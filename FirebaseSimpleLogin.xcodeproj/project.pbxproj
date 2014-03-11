@@ -1,0 +1,648 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		37DAD5C316F7CF550052EA3C /* Framework */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 37DAD5C416F7CF560052EA3C /* Build configuration list for PBXAggregateTarget "Framework" */;
+			buildPhases = (
+				37DAD5C916F7CFD80052EA3C /* ShellScript */,
+			);
+			dependencies = (
+				37DAD5C816F7CFC10052EA3C /* PBXTargetDependency */,
+			);
+			name = Framework;
+			productName = Framework;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		3786338F16ED799300AAA749 /* FirebaseSimpleLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 3786338E16ED799300AAA749 /* FirebaseSimpleLogin.m */; };
+		3786339716ED799300AAA749 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3786339616ED799300AAA749 /* SenTestingKit.framework */; };
+		3786339D16ED799300AAA749 /* libFirebaseSimpleLogin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3786338416ED799200AAA749 /* libFirebaseSimpleLogin.a */; };
+		378633A316ED799300AAA749 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 378633A116ED799300AAA749 /* InfoPlist.strings */; };
+		378633B116ED7B5600AAA749 /* LoginTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 378633B016ED7B5600AAA749 /* LoginTests.m */; };
+		378633C116ED7F0900AAA749 /* FTestHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 378633BF16ED7F0900AAA749 /* FTestHelpers.m */; };
+		378633C916EE4B6E00AAA749 /* FirebaseSimpleLogin.h in Headers */ = {isa = PBXBuildFile; fileRef = 3786338C16ED799200AAA749 /* FirebaseSimpleLogin.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		378633CA16EE4B8900AAA749 /* FirebaseSimpleLogin_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 378633C716EE4A7E00AAA749 /* FirebaseSimpleLogin_Private.h */; };
+		378633CF16EE4E6600AAA749 /* SenTestCase+FWaiter.m in Sources */ = {isa = PBXBuildFile; fileRef = 378633CC16EE4E6600AAA749 /* SenTestCase+FWaiter.m */; };
+		378633D316EE523C00AAA749 /* FTestConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 378633D216EE51FA00AAA749 /* FTestConstants.h */; };
+		378633D616EE547400AAA749 /* FAValidation.h in Headers */ = {isa = PBXBuildFile; fileRef = 378633D416EE547400AAA749 /* FAValidation.h */; };
+		378633D716EE547400AAA749 /* FAValidation.m in Sources */ = {isa = PBXBuildFile; fileRef = 378633D516EE547400AAA749 /* FAValidation.m */; };
+		378633DA16EE59E800AAA749 /* NSString+FAURLUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 378633D816EE59E800AAA749 /* NSString+FAURLUtils.h */; };
+		378633DB16EE59E800AAA749 /* NSString+FAURLUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 378633D916EE59E800AAA749 /* NSString+FAURLUtils.m */; };
+		378633DD16EE66F400AAA749 /* FATypedefs.h in Headers */ = {isa = PBXBuildFile; fileRef = 378633DC16EE66F400AAA749 /* FATypedefs.h */; };
+		378633E016EEA13900AAA749 /* FAUser.h in Headers */ = {isa = PBXBuildFile; fileRef = 378633DE16EEA13800AAA749 /* FAUser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		378633E116EEA13900AAA749 /* FAUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 378633DF16EEA13800AAA749 /* FAUser.m */; };
+		378633E316EEA21500AAA749 /* FATypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 378633E216EEA21400AAA749 /* FATypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		378633E916F0268800AAA749 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 378633E816F0268800AAA749 /* Accounts.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		378633EA16F0269700AAA749 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 378633E816F0268800AAA749 /* Accounts.framework */; };
+		378633F116F0336A00AAA749 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 378633F016F0336A00AAA749 /* Social.framework */; };
+		3786340416F16DF200AAA749 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 378633F016F0336A00AAA749 /* Social.framework */; };
+		37DAD5ED16F8C7C30052EA3C /* FAGitHash.h in Headers */ = {isa = PBXBuildFile; fileRef = 37DAD5EC16F8C7C30052EA3C /* FAGitHash.h */; };
+		37DAD5F616F92E1A0052EA3C /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 37DAD5F516F92E1A0052EA3C /* libicucore.dylib */; };
+		37DAD5F816F92E390052EA3C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37DAD5F716F92E390052EA3C /* CFNetwork.framework */; };
+		37DAD5FA16F92E3F0052EA3C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37DAD5F916F92E3F0052EA3C /* Security.framework */; };
+		37DAD5FC16F92E4E0052EA3C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37DAD5FB16F92E4E0052EA3C /* UIKit.framework */; };
+		37E78292176F9913008911E3 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37E78291176F9913008911E3 /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		37E78294176F9931008911E3 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 37E78293176F9931008911E3 /* libsqlite3.dylib */; settings = {ATTRIBUTES = (Weak, ); }; };
+		37E7829B176FADC1008911E3 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 37E78293176F9931008911E3 /* libsqlite3.dylib */; settings = {ATTRIBUTES = (Weak, ); }; };
+		37E7829C176FADE6008911E3 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37E78291176F9913008911E3 /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		37E7829E176FAE4C008911E3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37E7829D176FAE4C008911E3 /* CoreGraphics.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		37E7829F176FAE59008911E3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37E7829D176FAE4C008911E3 /* CoreGraphics.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		D40B90B817822C0300DC4147 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D40B90B717822C0300DC4147 /* FacebookSDK.framework */; };
+		D40B90BA17822CCB00DC4147 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D40B90B917822CCB00DC4147 /* Firebase.framework */; };
+		D40B90BB17822CCB00DC4147 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D40B90B917822CCB00DC4147 /* Firebase.framework */; };
+		D40B90BC17822CD500DC4147 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D40B90B717822C0300DC4147 /* FacebookSDK.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3786339B16ED799300AAA749 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3786337B16ED799200AAA749 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3786338316ED799200AAA749;
+			remoteInfo = FirebaseSimpleLogin;
+		};
+		37DAD5C716F7CFC10052EA3C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3786337B16ED799200AAA749 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3786338316ED799200AAA749;
+			remoteInfo = FirebaseSimpleLogin;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3786338416ED799200AAA749 /* libFirebaseSimpleLogin.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFirebaseSimpleLogin.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		3786338B16ED799200AAA749 /* FirebaseSimpleLogin-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FirebaseSimpleLogin-Prefix.pch"; sourceTree = "<group>"; };
+		3786338C16ED799200AAA749 /* FirebaseSimpleLogin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirebaseSimpleLogin.h; sourceTree = "<group>"; };
+		3786338E16ED799300AAA749 /* FirebaseSimpleLogin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirebaseSimpleLogin.m; sourceTree = "<group>"; wrapsLines = 0; };
+		3786339516ED799300AAA749 /* FirebaseSimpleLoginTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FirebaseSimpleLoginTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3786339616ED799300AAA749 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		378633A016ED799300AAA749 /* FirebaseSimpleLoginTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FirebaseSimpleLoginTests-Info.plist"; sourceTree = "<group>"; };
+		378633A216ED799300AAA749 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		378633AF16ED7B5600AAA749 /* LoginTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginTests.h; sourceTree = "<group>"; };
+		378633B016ED7B5600AAA749 /* LoginTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginTests.m; sourceTree = "<group>"; };
+		378633BE16ED7F0900AAA749 /* FTestHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTestHelpers.h; path = Helpers/FTestHelpers.h; sourceTree = "<group>"; };
+		378633BF16ED7F0900AAA749 /* FTestHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FTestHelpers.m; path = Helpers/FTestHelpers.m; sourceTree = "<group>"; };
+		378633C716EE4A7E00AAA749 /* FirebaseSimpleLogin_Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirebaseSimpleLogin_Private.h; sourceTree = "<group>"; };
+		378633CB16EE4E6600AAA749 /* SenTestCase+FWaiter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SenTestCase+FWaiter.h"; path = "Helpers/SenTestCase+FWaiter.h"; sourceTree = "<group>"; };
+		378633CC16EE4E6600AAA749 /* SenTestCase+FWaiter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "SenTestCase+FWaiter.m"; path = "Helpers/SenTestCase+FWaiter.m"; sourceTree = "<group>"; };
+		378633D216EE51FA00AAA749 /* FTestConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTestConstants.h; path = Helpers/FTestConstants.h; sourceTree = "<group>"; };
+		378633D416EE547400AAA749 /* FAValidation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAValidation.h; sourceTree = "<group>"; };
+		378633D516EE547400AAA749 /* FAValidation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAValidation.m; sourceTree = "<group>"; };
+		378633D816EE59E800AAA749 /* NSString+FAURLUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FAURLUtils.h"; sourceTree = "<group>"; };
+		378633D916EE59E800AAA749 /* NSString+FAURLUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FAURLUtils.m"; sourceTree = "<group>"; };
+		378633DC16EE66F400AAA749 /* FATypedefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FATypedefs.h; sourceTree = "<group>"; };
+		378633DE16EEA13800AAA749 /* FAUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAUser.h; sourceTree = "<group>"; };
+		378633DF16EEA13800AAA749 /* FAUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAUser.m; sourceTree = "<group>"; };
+		378633E216EEA21400AAA749 /* FATypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FATypes.h; sourceTree = "<group>"; };
+		378633E816F0268800AAA749 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		378633F016F0336A00AAA749 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		37DAD5E316F7E9EC0052EA3C /* FAUser_Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FAUser_Private.h; sourceTree = "<group>"; };
+		37DAD5EC16F8C7C30052EA3C /* FAGitHash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAGitHash.h; sourceTree = "<group>"; };
+		37DAD5F516F92E1A0052EA3C /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		37DAD5F716F92E390052EA3C /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		37DAD5F916F92E3F0052EA3C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		37DAD5FB16F92E4E0052EA3C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		37E78291176F9913008911E3 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		37E78293176F9931008911E3 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		37E78295176F998A008911E3 /* FacebookSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FacebookSDKResources.bundle; path = ../../Documents/FacebookSDK/FacebookSDK.framework/Versions/A/Resources/FacebookSDKResources.bundle; sourceTree = "<group>"; };
+		37E7829D176FAE4C008911E3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D40B90B717822C0300DC4147 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		D40B90B917822CCB00DC4147 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Firebase.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3786338116ED799200AAA749 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37E7829E176FAE4C008911E3 /* CoreGraphics.framework in Frameworks */,
+				37E78294176F9931008911E3 /* libsqlite3.dylib in Frameworks */,
+				37E78292176F9913008911E3 /* AdSupport.framework in Frameworks */,
+				378633F116F0336A00AAA749 /* Social.framework in Frameworks */,
+				378633E916F0268800AAA749 /* Accounts.framework in Frameworks */,
+				D40B90B817822C0300DC4147 /* FacebookSDK.framework in Frameworks */,
+				D40B90BA17822CCB00DC4147 /* Firebase.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3786339116ED799300AAA749 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37DAD5FC16F92E4E0052EA3C /* UIKit.framework in Frameworks */,
+				37DAD5FA16F92E3F0052EA3C /* Security.framework in Frameworks */,
+				37DAD5F816F92E390052EA3C /* CFNetwork.framework in Frameworks */,
+				37DAD5F616F92E1A0052EA3C /* libicucore.dylib in Frameworks */,
+				3786340416F16DF200AAA749 /* Social.framework in Frameworks */,
+				378633EA16F0269700AAA749 /* Accounts.framework in Frameworks */,
+				3786339716ED799300AAA749 /* SenTestingKit.framework in Frameworks */,
+				3786339D16ED799300AAA749 /* libFirebaseSimpleLogin.a in Frameworks */,
+				37E7829B176FADC1008911E3 /* libsqlite3.dylib in Frameworks */,
+				37E7829C176FADE6008911E3 /* AdSupport.framework in Frameworks */,
+				37E7829F176FAE59008911E3 /* CoreGraphics.framework in Frameworks */,
+				D40B90BB17822CCB00DC4147 /* Firebase.framework in Frameworks */,
+				D40B90BC17822CD500DC4147 /* FacebookSDK.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3786337916ED799200AAA749 = {
+			isa = PBXGroup;
+			children = (
+				3786338916ED799200AAA749 /* FirebaseSimpleLogin */,
+				3786339E16ED799300AAA749 /* FirebaseSimpleLoginTests */,
+				3786338616ED799200AAA749 /* Frameworks */,
+				3786338516ED799200AAA749 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3786338516ED799200AAA749 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3786338416ED799200AAA749 /* libFirebaseSimpleLogin.a */,
+				3786339516ED799300AAA749 /* FirebaseSimpleLoginTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3786338616ED799200AAA749 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D40B90B717822C0300DC4147 /* FacebookSDK.framework */,
+				37E7829D176FAE4C008911E3 /* CoreGraphics.framework */,
+				37E78295176F998A008911E3 /* FacebookSDKResources.bundle */,
+				37E78293176F9931008911E3 /* libsqlite3.dylib */,
+				37E78291176F9913008911E3 /* AdSupport.framework */,
+				37DAD5F516F92E1A0052EA3C /* libicucore.dylib */,
+				37DAD5F916F92E3F0052EA3C /* Security.framework */,
+				37DAD5FB16F92E4E0052EA3C /* UIKit.framework */,
+				37DAD5F716F92E390052EA3C /* CFNetwork.framework */,
+				D40B90B917822CCB00DC4147 /* Firebase.framework */,
+				378633F016F0336A00AAA749 /* Social.framework */,
+				378633E816F0268800AAA749 /* Accounts.framework */,
+				3786339616ED799300AAA749 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3786338916ED799200AAA749 /* FirebaseSimpleLogin */ = {
+			isa = PBXGroup;
+			children = (
+				37DAD5EC16F8C7C30052EA3C /* FAGitHash.h */,
+				37DAD5E316F7E9EC0052EA3C /* FAUser_Private.h */,
+				3786338C16ED799200AAA749 /* FirebaseSimpleLogin.h */,
+				3786338E16ED799300AAA749 /* FirebaseSimpleLogin.m */,
+				3786338A16ED799200AAA749 /* Supporting Files */,
+				378633C716EE4A7E00AAA749 /* FirebaseSimpleLogin_Private.h */,
+				378633D416EE547400AAA749 /* FAValidation.h */,
+				378633D516EE547400AAA749 /* FAValidation.m */,
+				378633D816EE59E800AAA749 /* NSString+FAURLUtils.h */,
+				378633D916EE59E800AAA749 /* NSString+FAURLUtils.m */,
+				378633DC16EE66F400AAA749 /* FATypedefs.h */,
+				378633DE16EEA13800AAA749 /* FAUser.h */,
+				378633DF16EEA13800AAA749 /* FAUser.m */,
+				378633E216EEA21400AAA749 /* FATypes.h */,
+			);
+			path = FirebaseSimpleLogin;
+			sourceTree = "<group>";
+		};
+		3786338A16ED799200AAA749 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3786338B16ED799200AAA749 /* FirebaseSimpleLogin-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3786339E16ED799300AAA749 /* FirebaseSimpleLoginTests */ = {
+			isa = PBXGroup;
+			children = (
+				378633BD16ED7E1B00AAA749 /* Helpers */,
+				3786339F16ED799300AAA749 /* Supporting Files */,
+				378633AF16ED7B5600AAA749 /* LoginTests.h */,
+				378633B016ED7B5600AAA749 /* LoginTests.m */,
+			);
+			path = FirebaseSimpleLoginTests;
+			sourceTree = "<group>";
+		};
+		3786339F16ED799300AAA749 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				378633A016ED799300AAA749 /* FirebaseSimpleLoginTests-Info.plist */,
+				378633A116ED799300AAA749 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		378633BD16ED7E1B00AAA749 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				378633D216EE51FA00AAA749 /* FTestConstants.h */,
+				378633BE16ED7F0900AAA749 /* FTestHelpers.h */,
+				378633BF16ED7F0900AAA749 /* FTestHelpers.m */,
+				378633CB16EE4E6600AAA749 /* SenTestCase+FWaiter.h */,
+				378633CC16EE4E6600AAA749 /* SenTestCase+FWaiter.m */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		378633C816EE4B4200AAA749 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				378633C916EE4B6E00AAA749 /* FirebaseSimpleLogin.h in Headers */,
+				378633E016EEA13900AAA749 /* FAUser.h in Headers */,
+				378633E316EEA21500AAA749 /* FATypes.h in Headers */,
+				378633CA16EE4B8900AAA749 /* FirebaseSimpleLogin_Private.h in Headers */,
+				378633D316EE523C00AAA749 /* FTestConstants.h in Headers */,
+				378633D616EE547400AAA749 /* FAValidation.h in Headers */,
+				378633DA16EE59E800AAA749 /* NSString+FAURLUtils.h in Headers */,
+				378633DD16EE66F400AAA749 /* FATypedefs.h in Headers */,
+				37DAD5ED16F8C7C30052EA3C /* FAGitHash.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		3786338316ED799200AAA749 /* FirebaseSimpleLogin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 378633A916ED799300AAA749 /* Build configuration list for PBXNativeTarget "FirebaseSimpleLogin" */;
+			buildPhases = (
+				37DAD5EA16F8C7680052EA3C /* ShellScript */,
+				3786338016ED799200AAA749 /* Sources */,
+				3786338116ED799200AAA749 /* Frameworks */,
+				378633C816EE4B4200AAA749 /* Headers */,
+				37DAD5CA16F7D1650052EA3C /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FirebaseSimpleLogin;
+			productName = FirebaseSimpleLogin;
+			productReference = 3786338416ED799200AAA749 /* libFirebaseSimpleLogin.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		3786339416ED799300AAA749 /* FirebaseSimpleLoginTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 378633AC16ED799300AAA749 /* Build configuration list for PBXNativeTarget "FirebaseSimpleLoginTests" */;
+			buildPhases = (
+				3786339016ED799300AAA749 /* Sources */,
+				3786339116ED799300AAA749 /* Frameworks */,
+				3786339216ED799300AAA749 /* Resources */,
+				3786339316ED799300AAA749 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3786339C16ED799300AAA749 /* PBXTargetDependency */,
+			);
+			name = FirebaseSimpleLoginTests;
+			productName = FirebaseSimpleLoginTests;
+			productReference = 3786339516ED799300AAA749 /* FirebaseSimpleLoginTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3786337B16ED799200AAA749 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = Firebase;
+			};
+			buildConfigurationList = 3786337E16ED799200AAA749 /* Build configuration list for PBXProject "FirebaseSimpleLogin" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3786337916ED799200AAA749;
+			productRefGroup = 3786338516ED799200AAA749 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3786338316ED799200AAA749 /* FirebaseSimpleLogin */,
+				3786339416ED799300AAA749 /* FirebaseSimpleLoginTests */,
+				37DAD5C316F7CF550052EA3C /* Framework */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3786339216ED799300AAA749 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				378633A316ED799300AAA749 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3786339316ED799300AAA749 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+		37DAD5C916F7CFD80052EA3C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nset +u\n# Avoid recursively calling this script.\nif [[ $SF_MASTER_SCRIPT_RUNNING ]]\nthen\nexit 0\nfi\nset -u\nexport SF_MASTER_SCRIPT_RUNNING=1\n\nSF_TARGET_NAME=${PROJECT_NAME}\nSF_EXECUTABLE_PATH=\"lib${SF_TARGET_NAME}.a\"\nSF_WRAPPER_NAME=\"${SF_TARGET_NAME}.framework\"\n\n# The following conditionals come from\n# https://github.com/kstenerud/iOS-Universal-Framework\n\nif [[ \"$SDK_NAME\" =~ ([A-Za-z]+) ]]\nthen\nSF_SDK_PLATFORM=${BASH_REMATCH[1]}\nelse\necho \"Could not find platform name from SDK_NAME: $SDK_NAME\"\nexit 1\nfi\n\nif [[ \"$SDK_NAME\" =~ ([0-9]+.*$) ]]\nthen\nSF_SDK_VERSION=${BASH_REMATCH[1]}\nelse\necho \"Could not find sdk version from SDK_NAME: $SDK_NAME\"\nexit 1\nfi\n\nif [[ \"$SF_SDK_PLATFORM\" = \"iphoneos\" ]]\nthen\nSF_OTHER_PLATFORM=iphonesimulator\nelse\nSF_OTHER_PLATFORM=iphoneos\nfi\n\nif [[ \"$BUILT_PRODUCTS_DIR\" =~ (.*)$SF_SDK_PLATFORM$ ]]\nthen\nSF_OTHER_BUILT_PRODUCTS_DIR=\"${BASH_REMATCH[1]}${SF_OTHER_PLATFORM}\"\nelse\necho \"Could not find platform name from build products directory: $BUILT_PRODUCTS_DIR\"\nexit 1\nfi\n\n# Build the other platform.\nxcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${SF_OTHER_PLATFORM}${SF_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" OBJROOT=\"${OBJROOT}\" BUILD_ROOT=\"${BUILD_ROOT}\" SYMROOT=\"${SYMROOT}\" $ACTION\n\n# Smash the two static libraries into one fat binary and store it in the .framework\nlipo -create \"${BUILT_PRODUCTS_DIR}/${SF_EXECUTABLE_PATH}\" \"${SF_OTHER_BUILT_PRODUCTS_DIR}/${SF_EXECUTABLE_PATH}\" -output \"${BUILT_PRODUCTS_DIR}/${SF_WRAPPER_NAME}/Versions/A/${SF_TARGET_NAME}\"\n\n# Copy the binary to the other architecture folder to have a complete framework in both.\ncp -a \"${BUILT_PRODUCTS_DIR}/${SF_WRAPPER_NAME}/Versions/A/${SF_TARGET_NAME}\" \"${SF_OTHER_BUILT_PRODUCTS_DIR}/${SF_WRAPPER_NAME}/Versions/A/${SF_TARGET_NAME}\"\n";
+		};
+		37DAD5CA16F7D1650052EA3C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n\nmkdir -p \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/Versions/A/Headers\"\n\n# Link the \"Current\" version to \"A\"\n/bin/ln -sfh A \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/Versions/Current\"\n/bin/ln -sfh Versions/Current/Headers \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/Headers\"\n/bin/ln -sfh \"Versions/Current/${PRODUCT_NAME}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/${PRODUCT_NAME}\"\n\n# The -a ensures that the headers maintain the source modification date so that we don't constantly\n# cause propagating rebuilds of files that import these headers.\n/bin/cp -a \"${TARGET_BUILD_DIR}/${PUBLIC_HEADERS_FOLDER_PATH}/\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/Versions/A/Headers\"";
+		};
+		37DAD5EA16F8C7680052EA3C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "hash=`git rev-parse HEAD`\nbuild=`date \"+%Y%m%d\"`\necho `pwd`\ndst=\"`pwd`/FirebaseSimpleLogin/FAGitHash.h\"\necho $dst\necho \"Saving git hash to $dst\"\necho \"\" > $dst\necho \"#ifndef FirebaseSimpleLogin_FGitHash_h\" >> $dst\necho \"#define FirebaseSimpleLogin_FGitHash_h\" >> $dst\necho \"#define kFirebaseSimpleLoginGitHash @\\\"${hash}\\\"\" >> $dst\necho \"#define kFirebaseSimpleLoginBuildDate @\\\"${build}\\\"\" >> $dst\necho \"#endif\" >> $dst";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3786338016ED799200AAA749 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3786338F16ED799300AAA749 /* FirebaseSimpleLogin.m in Sources */,
+				378633D716EE547400AAA749 /* FAValidation.m in Sources */,
+				378633DB16EE59E800AAA749 /* NSString+FAURLUtils.m in Sources */,
+				378633E116EEA13900AAA749 /* FAUser.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3786339016ED799300AAA749 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				378633B116ED7B5600AAA749 /* LoginTests.m in Sources */,
+				378633C116ED7F0900AAA749 /* FTestHelpers.m in Sources */,
+				378633CF16EE4E6600AAA749 /* SenTestCase+FWaiter.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3786339C16ED799300AAA749 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3786338316ED799200AAA749 /* FirebaseSimpleLogin */;
+			targetProxy = 3786339B16ED799300AAA749 /* PBXContainerItemProxy */;
+		};
+		37DAD5C816F7CFC10052EA3C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3786338316ED799200AAA749 /* FirebaseSimpleLogin */;
+			targetProxy = 37DAD5C716F7CFC10052EA3C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		378633A116ED799300AAA749 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				378633A216ED799300AAA749 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		378633A716ED799300AAA749 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		378633A816ED799300AAA749 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_LDFLAGS = "-ObjC";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		378633AA16ED799300AAA749 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEAD_CODE_STRIPPING = NO;
+				DSTROOT = /tmp/FirebaseSimpleLogin.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../Library/Developer/Xcode/DerivedData/Firebase-atelujreoxbnbgguledubowgtaly/Build/Products/Debug-iphoneos\"",
+					"\"$(SRCROOT)/../../Documents/FacebookSDK\"",
+					"\"$(SRCROOT)/../../../Library/Developer/Xcode/DerivedData/Firebase-ezgunhcbgcgeocbeydovmmjdksxa/Build/Products/Release-iphoneos\"",
+					"\"$(SRCROOT)/../../Library/Developer/Xcode/DerivedData/facebook-ios-sdk-flwbkjfuielmfvcadsdogqqvtkwj/Build/Products/Debug-iphoneos\"",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FirebaseSimpleLogin/FirebaseSimpleLogin-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		378633AB16ED799300AAA749 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEAD_CODE_STRIPPING = NO;
+				DSTROOT = /tmp/FirebaseSimpleLogin.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../Library/Developer/Xcode/DerivedData/Firebase-atelujreoxbnbgguledubowgtaly/Build/Products/Debug-iphoneos\"",
+					"\"$(SRCROOT)/../../Documents/FacebookSDK\"",
+					"\"$(SRCROOT)/../../../Library/Developer/Xcode/DerivedData/Firebase-ezgunhcbgcgeocbeydovmmjdksxa/Build/Products/Release-iphoneos\"",
+					"\"$(SRCROOT)/../../Library/Developer/Xcode/DerivedData/facebook-ios-sdk-flwbkjfuielmfvcadsdogqqvtkwj/Build/Products/Debug-iphoneos\"",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FirebaseSimpleLogin/FirebaseSimpleLogin-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		378633AD16ED799300AAA749 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"\"$(SRCROOT)/../../Library/Developer/Xcode/DerivedData/Firebase-atelujreoxbnbgguledubowgtaly/Build/Products/Debug-iphoneos\"",
+					"\"$(SRCROOT)/../../Documents/FacebookSDK\"",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FirebaseSimpleLogin/FirebaseSimpleLogin-Prefix.pch";
+				INFOPLIST_FILE = "FirebaseSimpleLoginTests/FirebaseSimpleLoginTests-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		378633AE16ED799300AAA749 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"\"$(SRCROOT)/../../Library/Developer/Xcode/DerivedData/Firebase-atelujreoxbnbgguledubowgtaly/Build/Products/Debug-iphoneos\"",
+					"\"$(SRCROOT)/../../Documents/FacebookSDK\"",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FirebaseSimpleLogin/FirebaseSimpleLogin-Prefix.pch";
+				INFOPLIST_FILE = "FirebaseSimpleLoginTests/FirebaseSimpleLoginTests-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+		37DAD5C516F7CF560052EA3C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		37DAD5C616F7CF560052EA3C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3786337E16ED799200AAA749 /* Build configuration list for PBXProject "FirebaseSimpleLogin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				378633A716ED799300AAA749 /* Debug */,
+				378633A816ED799300AAA749 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		378633A916ED799300AAA749 /* Build configuration list for PBXNativeTarget "FirebaseSimpleLogin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				378633AA16ED799300AAA749 /* Debug */,
+				378633AB16ED799300AAA749 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		378633AC16ED799300AAA749 /* Build configuration list for PBXNativeTarget "FirebaseSimpleLoginTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				378633AD16ED799300AAA749 /* Debug */,
+				378633AE16ED799300AAA749 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		37DAD5C416F7CF560052EA3C /* Build configuration list for PBXAggregateTarget "Framework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37DAD5C516F7CF560052EA3C /* Debug */,
+				37DAD5C616F7CF560052EA3C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3786337B16ED799200AAA749 /* Project object */;
+}

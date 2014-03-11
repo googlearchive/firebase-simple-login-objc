@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>D2ED9028-4FF7-40C9-B803-15CF0FF4F438</string>
+	<key>IDESourceControlProjectName</key>
+	<string>FirebaseSimpleLogin</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>67A24EB7-AAAC-4427-BF04-E65C369AA530</key>
+		<string>ssh://github.com/firebase/firebase-simple-login-objc</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>FirebaseSimpleLogin.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>67A24EB7-AAAC-4427-BF04-E65C369AA530</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/firebase/firebase-simple-login-objc</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>67A24EB7-AAAC-4427-BF04-E65C369AA530</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>67A24EB7-AAAC-4427-BF04-E65C369AA530</string>
+			<key>IDESourceControlWCCName</key>
+			<string>firebase-simple-login-objc</string>
+		</dict>
+	</array>
+</dict>
+</plist>
