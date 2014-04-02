@@ -46,22 +46,24 @@
 
 @implementation FirebaseSimpleLogin
 
+// Global Consts
 static NSString *const FIREBASE_AUTH_ERROR_DOMAIN = @"FirebaseSimpleLogin";
 static NSString *const FIREBASE_AUTH_DEFAULT_API_HOST = @"https://auth.firebase.com";
-// For debugging purposes
-//static NSString *const FIREBASE_AUTH_DEFAULT_API_HOST = @"http://fblocal.com:12000";
-static NSString *const FIREBASE_AUTH_CREATEUSER_PATH = @"/auth/firebase/create";
-static NSString *const FIREBASE_AUTH_REMOVEUSER_PATH = @"/auth/firebase/remove";
-static NSString *const FIREBASE_AUTH_CHANGEPASSWORD_PATH = @"/auth/firebase/update";
-static NSString *const FIREBASE_AUTH_RESETPASSWORD_PATH = @"/auth/firebase/reset_password";
-static NSString *const FIREBASE_AUTH_PASSWORD_PATH = @"/auth/firebase";
-static NSString *const FIREBASE_AUTH_FACEBOOK_PATH = @"/auth/facebook/token";
-static NSString *const FIREBASE_AUTH_GOOGLE_PATH = @"/auth/google/token";
-static NSString *const FIREBASE_AUTH_TWITTERREVERSE_PATH = @"/auth/twitter/reverse";
-static NSString *const FIREBASE_AUTH_TWITTERTOKEN_PATH = @"/auth/twitter/token";
-static NSString *const FIREBASE_AUTH_ANONYMOUS_PATH = @"/auth/anonymous";
+static NSString *const FIREBASE_AUTH_PATH_SEMVER = @"XXX_TAG_VERSION_XXX";
 
-static NSString *const FIREBASE_AUTH_SEMVER = @"XXX_TAG_VERSION_XXX";
+// Email / Password Provider
+static NSString *const FIREBASE_AUTH_PATH_PASSWORD = @"/auth/firebase";
+static NSString *const FIREBASE_AUTH_PATH_PASSWORD_CREATEUSER = @"/auth/firebase/create";
+static NSString *const FIREBASE_AUTH_PATH_PASSWORD_REMOVEUSER = @"/auth/firebase/remove";
+static NSString *const FIREBASE_AUTH_PATH_PASSWORD_CHANGEPASSWORD = @"/auth/firebase/update";
+static NSString *const FIREBASE_AUTH_PATH_PASSWORD_RESETPASSWORD = @"/auth/firebase/reset_password";
+
+// OAuth Token Providers
+static NSString *const FIREBASE_AUTH_PATH_ANONYMOUS = @"/auth/anonymous";
+static NSString *const FIREBASE_AUTH_PATH_FACEBOOKTOKEN = @"/auth/facebook/token";
+static NSString *const FIREBASE_AUTH_PATH_GOOGLETOKEN = @"/auth/google/token";
+static NSString *const FIREBASE_AUTH_PATH_TWITTERREVERSE = @"/auth/twitter/reverse";
+static NSString *const FIREBASE_AUTH_PATH_TWITTERTOKEN = @"/auth/twitter/token";
 
 @synthesize ref;
 @synthesize namespace;
@@ -70,7 +72,7 @@ static NSString *const FIREBASE_AUTH_SEMVER = @"XXX_TAG_VERSION_XXX";
 @synthesize options;
 
 + (NSString *) sdkVersion {
-    return [NSString stringWithFormat:@"%@_%@_%@", FIREBASE_AUTH_SEMVER, kFirebaseSimpleLoginBuildDate, kFirebaseSimpleLoginGitHash];
+    return [NSString stringWithFormat:@"%@_%@_%@", FIREBASE_AUTH_PATH_SEMVER, kFirebaseSimpleLoginBuildDate, kFirebaseSimpleLoginGitHash];
 }
 
 + (NSString *) namespaceWithUrl:(NSString *)url {
@@ -173,7 +175,7 @@ static NSString *const FIREBASE_AUTH_SEMVER = @"XXX_TAG_VERSION_XXX";
     self = [super init];
     if (self) {
         self.hasFacebookSDK = NSClassFromString(@"FBSession") != nil;
-        
+
         self.ref = aRef;
         self.namespace = [FirebaseSimpleLogin namespaceWithUrl:[ref description]];
         self.apiHost = host;
@@ -215,7 +217,7 @@ static NSString *const FIREBASE_AUTH_SEMVER = @"XXX_TAG_VERSION_XXX";
             theError = [FirebaseSimpleLogin errorFromResponse:@{}];
         }
     }
-    
+
     if (results != nil) {
         [self attemptAuthWithData:results andCallback:userCallback];
     } else {
@@ -305,7 +307,7 @@ static NSString *const FIREBASE_AUTH_SEMVER = @"XXX_TAG_VERSION_XXX";
         if ([reportedAppId isKindOfClass:[NSString class]]) {
 
             if ([reportedAppId isEqualToString:appId]) {
-            
+
                 [NSClassFromString(@"FBSettings") setDefaultAppID:appId];
 
                 // we have the right app.
@@ -353,7 +355,7 @@ static NSString *const FIREBASE_AUTH_SEMVER = @"XXX_TAG_VERSION_XXX";
 
 // Internal. Shared by auth via OS and auth via token
 - (void) createFacebookUserWithToken:(NSString *)token providerData:(NSDictionary *)providerData account:(ACAccount *)account andUserCallback:(fabt_void_nserror_user)userCallback {
-    [self makeRequestTo:FIREBASE_AUTH_FACEBOOK_PATH withData:@{@"access_token": token} andCallback:^(NSError *error, NSDictionary *json) {
+    [self makeRequestTo:FIREBASE_AUTH_PATH_FACEBOOKTOKEN withData:@{@"access_token": token} andCallback:^(NSError *error, NSDictionary *json) {
         if (error) {
             userCallback(error, nil);
         } else {
@@ -395,15 +397,37 @@ static NSString *const FIREBASE_AUTH_SEMVER = @"XXX_TAG_VERSION_XXX";
     }];
 }
 
-
 - (void) loginToGoogleWithAccessToken:(NSString *)accessToken withCompletionBlock:(fabt_void_nserror_user)block {
+  [self loginWithGoogleWithAccessToken:accessToken withCompletionBlock:block];
+}
+
+
+- (void) loginWithGoogleWithAccessToken:(NSString *)accessToken withCompletionBlock:(fabt_void_nserror_user)block {
     fabt_void_nserror_user userCallback = [block copy];
     NSDictionary* providerData = @{
       @"access_token": accessToken
     };
-    [self loginToProvider:FAProviderGoogle path:FIREBASE_AUTH_GOOGLE_PATH params:providerData andUserCallback:userCallback];
+    [self loginToProvider:FAProviderGoogle path:FIREBASE_AUTH_PATH_GOOGLETOKEN params:providerData andUserCallback:userCallback];
 }
 
+- (void) loginWithFacebookWithAccessToken:(NSString *)accessToken withCompletionBlock:(fabt_void_nserror_user)block {
+    fabt_void_nserror_user userCallback = [block copy];
+    NSDictionary* providerData = @{
+      @"access_token": accessToken
+    };
+    [self loginToProvider:FAProviderFacebook path:FIREBASE_AUTH_PATH_FACEBOOKTOKEN params:providerData andUserCallback:userCallback];
+}
+
+- (void) loginWithTwitterWithAccessToken:(NSString *)accessToken andAccessTokenSecret:(NSString *)accessTokenSecret
+         andTwitterUserId:(NSString *)twitterUserId withCompletionBlock:(fabt_void_nserror_user)block {
+    fabt_void_nserror_user userCallback = [block copy];
+    NSDictionary* providerData = @{
+      @"oauth_token": accessToken,
+      @"oauth_token_secret": accessTokenSecret,
+      @"user_id": twitterUserId
+    };
+    [self loginToProvider:FAProviderTwitter path:FIREBASE_AUTH_PATH_TWITTERTOKEN params:providerData andUserCallback:userCallback];
+}
 
 - (void) requestFacebookAccountWithPermissions:(NSArray *)permissions audience:(NSString *)audience appId:(NSString *)appId withBlock:(fabt_void_nserror_acaccount)block {
     ACAccountType* accountType = [self.store accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierFacebook];
@@ -439,10 +463,10 @@ static NSString *const FIREBASE_AUTH_SEMVER = @"XXX_TAG_VERSION_XXX";
 
     fabt_void_nserror_user userCallback = [block copy];
     fabt_int_nsarray userAccountSelection  = [accountSelection copy];
-    
+
     // Step1:
     NSDictionary* data = @{};
-    [self makeRequestTo:FIREBASE_AUTH_TWITTERREVERSE_PATH withData:data andCallback:^(NSError *error, NSDictionary *json) {
+    [self makeRequestTo:FIREBASE_AUTH_PATH_TWITTERREVERSE withData:data andCallback:^(NSError *error, NSDictionary *json) {
         if (error != nil) {
             userCallback(error, nil);
         } else {
@@ -529,7 +553,7 @@ static NSString *const FIREBASE_AUTH_SEMVER = @"XXX_TAG_VERSION_XXX";
         [params setObject:[parts objectAtIndex:1] forKey:[parts objectAtIndex:0]];
     }
 
-    [self makeRequestTo:FIREBASE_AUTH_TWITTERTOKEN_PATH withData:params andCallback:^(NSError *error, NSDictionary *json) {
+    [self makeRequestTo:FIREBASE_AUTH_PATH_TWITTERTOKEN withData:params andCallback:^(NSError *error, NSDictionary *json) {
         if (error) {
             userCallback(error, nil);
         } else {
@@ -552,7 +576,7 @@ static NSString *const FIREBASE_AUTH_SEMVER = @"XXX_TAG_VERSION_XXX";
 - (void) loginAnonymouslywithCompletionBlock:(void (^)(NSError* error, FAUser* user))block {
     fabt_void_nserror_user userCallback = [block copy];
 
-    [self makeRequestTo:FIREBASE_AUTH_ANONYMOUS_PATH withData:@{} andCallback:^(NSError *error, NSDictionary *json) {
+    [self makeRequestTo:FIREBASE_AUTH_PATH_ANONYMOUS withData:@{} andCallback:^(NSError *error, NSDictionary *json) {
         if (error) {
             userCallback(error, nil);
         } else {
@@ -580,7 +604,7 @@ static NSString *const FIREBASE_AUTH_SEMVER = @"XXX_TAG_VERSION_XXX";
         [self onInvalidArgWithError:[self errorForInvalidPassword] AndUserCallback:userCallback];
     } else {
         NSDictionary* data = @{@"email": email, @"password": password};
-        [self makeRequestTo:FIREBASE_AUTH_PASSWORD_PATH withData:data andCallback:^(NSError *error, NSDictionary *json) {
+        [self makeRequestTo:FIREBASE_AUTH_PATH_PASSWORD withData:data andCallback:^(NSError *error, NSDictionary *json) {
             if (error) {
                 userCallback(error, nil);
             } else {
@@ -607,7 +631,7 @@ static NSString *const FIREBASE_AUTH_SEMVER = @"XXX_TAG_VERSION_XXX";
     } else {
         NSDictionary* data = @{@"email": email, @"password": password};
 
-        [self makeRequestTo:FIREBASE_AUTH_CREATEUSER_PATH withData:data andCallback:^(NSError* error, NSDictionary* json) {
+        [self makeRequestTo:FIREBASE_AUTH_PATH_PASSWORD_CREATEUSER withData:data andCallback:^(NSError* error, NSDictionary* json) {
             if (error) {
                 userCallback(error, nil);
             } else {
@@ -645,7 +669,7 @@ static NSString *const FIREBASE_AUTH_SEMVER = @"XXX_TAG_VERSION_XXX";
     } else {
         NSDictionary* data = @{@"email": email, @"password": password};
 
-        [self makeRequestTo:FIREBASE_AUTH_REMOVEUSER_PATH withData:data andCallback:^(NSError* error, NSDictionary* json) {
+        [self makeRequestTo:FIREBASE_AUTH_PATH_PASSWORD_REMOVEUSER withData:data andCallback:^(NSError* error, NSDictionary* json) {
             if (error) {
                 userCallback(error, NO);
             } else {
@@ -675,7 +699,7 @@ static NSString *const FIREBASE_AUTH_SEMVER = @"XXX_TAG_VERSION_XXX";
         };
 
 
-        [self makeRequestTo:FIREBASE_AUTH_CHANGEPASSWORD_PATH withData:data andCallback:^(NSError *error, NSDictionary *json) {
+        [self makeRequestTo:FIREBASE_AUTH_PATH_PASSWORD_CHANGEPASSWORD withData:data andCallback:^(NSError *error, NSDictionary *json) {
             if (error) {
                 userCallback(error, NO);
             } else {
@@ -692,7 +716,7 @@ static NSString *const FIREBASE_AUTH_SEMVER = @"XXX_TAG_VERSION_XXX";
     } else {
         NSDictionary* data = @{@"email": email};
 
-        [self makeRequestTo:FIREBASE_AUTH_RESETPASSWORD_PATH withData:data andCallback:^(NSError* error, NSDictionary* json) {
+        [self makeRequestTo:FIREBASE_AUTH_PATH_PASSWORD_RESETPASSWORD withData:data andCallback:^(NSError* error, NSDictionary* json) {
             if (error) {
                 userCallback(error, NO);
             } else {
@@ -829,7 +853,7 @@ static NSString *const FIREBASE_AUTH_SEMVER = @"XXX_TAG_VERSION_XXX";
         user = [FAUser userWithId:userId uid:uid token:token provider:provider userData:thirdPartyData];
     }
 
-    NSMutableDictionary* attrs = [self keyQueryDict];  
+    NSMutableDictionary* attrs = [self keyQueryDict];
 
     // Set the actual data
     NSDictionary* keyDict = @{@"token": token, @"userData": userData};

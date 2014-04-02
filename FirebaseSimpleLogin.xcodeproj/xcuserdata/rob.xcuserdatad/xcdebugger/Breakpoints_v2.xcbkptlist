@@ -56,7 +56,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FirebaseSimpleLogin/FirebaseSimpleLogin.m"
-            timestampString = "415238934.867241"
+            timestampString = "418086516.186308"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "299"
@@ -72,11 +72,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FirebaseSimpleLogin/FirebaseSimpleLogin.m"
-            timestampString = "415238934.867241"
+            timestampString = "418091190.304912"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "313"
-            endingLineNumber = "313"
+            startingLineNumber = "343"
+            endingLineNumber = "343"
             landmarkName = "-loginToFacebookAppWithId:permissions:audience:withCompletionBlock:"
             landmarkType = "5">
          </BreakpointContent>

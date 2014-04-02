@@ -5,34 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>D2ED9028-4FF7-40C9-B803-15CF0FF4F438</string>
+	<string>C374EF8D-DBB2-472A-B7CB-675E95978897</string>
 	<key>IDESourceControlProjectName</key>
 	<string>FirebaseSimpleLogin</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>67A24EB7-AAAC-4427-BF04-E65C369AA530</key>
-		<string>ssh://github.com/firebase/firebase-simple-login-objc</string>
+		<key>503EEEBC-550F-4BBA-8857-F6AB7B87A6D7</key>
+		<string>ssh://github.com/firebase/firebase-simple-login-objc.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>FirebaseSimpleLogin.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>67A24EB7-AAAC-4427-BF04-E65C369AA530</key>
+		<key>503EEEBC-550F-4BBA-8857-F6AB7B87A6D7</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://github.com/firebase/firebase-simple-login-objc</string>
+	<string>ssh://github.com/firebase/firebase-simple-login-objc.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>67A24EB7-AAAC-4427-BF04-E65C369AA530</string>
+	<string>503EEEBC-550F-4BBA-8857-F6AB7B87A6D7</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>67A24EB7-AAAC-4427-BF04-E65C369AA530</string>
+			<string>503EEEBC-550F-4BBA-8857-F6AB7B87A6D7</string>
 			<key>IDESourceControlWCCName</key>
 			<string>firebase-simple-login-objc</string>
 		</dict>
