@@ -67,10 +67,10 @@ fi
 cp $STANDALONE_SRC $STANDALONE_TARGET
 cp $STANDALONE_SRC ${STANDALONE_DEST}/${STANDALONE_STUB}-LATEST.zip
 
-cd ${STANDALONE_DEST}/
+pushd ${STANDALONE_DEST}/
 git add .
 git commit -am "[firebase-release] Updated Firebase iOS Simple Login client to $VER"
-cd -
+popd
 
 echo "firebase-clients repo updated. Push and deploy to make changes live."
 
@@ -78,7 +78,7 @@ echo "firebase-clients repo updated. Push and deploy to make changes live."
 git checkout $FIREBASEM
 
 # Once everything is successful then tag it
-git tag simple-login-v$VER
+git tag v$VER
 git push --tags origin master
 
 echo "Manual steps:"
