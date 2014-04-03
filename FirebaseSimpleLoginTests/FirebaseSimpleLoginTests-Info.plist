@@ -18,6 +18,8 @@
 	<string>????</string>
 	<key>FacebookAppID</key>
 	<string>400653440016272</string>
+	<key>FacebookDisplayName</key>
+	<string>Firebase Auth Demo (Internal)</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 </dict>
