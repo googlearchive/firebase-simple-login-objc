@@ -1,3 +1,11 @@
+## Firebase Simple Login iOS Changelog:
+
+v1.3.1
+-------------
+Release Date: 2014-04-03
+
+* Add support for latest Facebook iOS SDK (v3.13) and document changes ([#2](https://github.com/firebase/firebase-simple-login/issues/2))
+
 v1.3.0
 -------------
 Release Date: 2014-03-06
