@@ -261,7 +261,6 @@ static NSString *const FIREBASE_AUTH_PATH_TWITTERTOKEN = @"/auth/twitter/token";
 #pragma mark External Facebook methods
 
 - (void) facebookSessionStateChanged:(id)session state:(FBSessionState)state error:(NSError *)error userCallback:(fabt_void_nserror_user)userCallback {
-
     switch (state) {
         case FBSessionStateOpen: {
             NSString* accessToken = [[session accessTokenData] accessToken];
@@ -279,17 +278,16 @@ static NSString *const FIREBASE_AUTH_PATH_TWITTERTOKEN = @"/auth/twitter/token";
             userCallback(userError, nil);
             break;
         }
-        case FBSessionStateClosed:  // Nothing to do here, they must have previously been logged in. Still logged in to Firebase
+        case FBSessionStateClosed:
+            // Nothing to do here, they must have previously been logged in. Still logged in to Firebase
         default: {
             [session closeAndClearTokenInformation];
             break;
         }
-
     }
 }
 
 - (void) loginToFacebookAppWithId:(NSString *)appId permissions:(NSArray *)permissions audience:(NSString *)audience withCompletionBlock:(fabt_void_nserror_user)block {
-
     if (permissions == nil || permissions.count == 0) {
         permissions = @[@"email"];
     }
@@ -300,46 +298,42 @@ static NSString *const FIREBASE_AUTH_PATH_TWITTERTOKEN = @"/auth/twitter/token";
     fabt_void_nserror_user userCallback = [block copy];
 
     if (self.hasFacebookSDK) {
-
         NSBundle* bundle = [NSBundle bundleForClass:[self class]];
         NSDictionary* infoDict = [bundle infoDictionary];
-        id reportedAppId = [infoDict objectForKey:@"FacebookAppID"];
-        if ([reportedAppId isKindOfClass:[NSString class]]) {
-
-            if ([reportedAppId isEqualToString:appId]) {
-
-                [NSClassFromString(@"FBSettings") setDefaultAppID:appId];
-
-                // we have the right app.
-                Class fbSession = NSClassFromString(@"FBSession");
-                if ([FirebaseSimpleLogin containsPublishActions:permissions]) {
-                    FBSessionDefaultAudience fbAudience = [FirebaseSimpleLogin translateFacebookAudience:audience];
-                    [fbSession openActiveSessionWithPublishPermissions:permissions defaultAudience:fbAudience allowLoginUI:YES completionHandler:^(FBSession *session, FBSessionState status, NSError *error) {
-                        [self facebookSessionStateChanged:session state:status error:error userCallback:userCallback];
-                    }];
-                } else {
-                    [fbSession openActiveSessionWithReadPermissions:permissions allowLoginUI:YES
-                                                  completionHandler:^(id session, FBSessionState state, NSError *error) {
-                        [self facebookSessionStateChanged:session state:state error:error userCallback:userCallback];
-                    }];
-                }
-            } else {
-                NSLog(@"Found incorrect FacebookAppID in .plist file: %@. Was expecting %@", reportedAppId, appId);
-            }
-        } else {
-            // TODO: report an error
-            NSLog(@"Could not find FacebookAppID in default .plist file (%@). Is it set up properly? Using bundle at path: %@", reportedAppId, [bundle bundlePath]);
+        id facebookAppId = [infoDict objectForKey:@"FacebookAppID"];
+        id facebookAppName = [infoDict objectForKey:@"FacebookDisplayName"];
+        if (![facebookAppId isKindOfClass:[NSString class]]) {
+            NSLog(@"FirebaseSimpleLogin: Could not find FacebookAppID in default .plist file (%@). Is it set up properly? Using bundle at path: %@", facebookAppId, [bundle bundlePath]);
+            return;
+        }
+        if (![facebookAppName isKindOfClass:[NSString class]]) {
+            NSLog(@"FirebaseSimpleLogin: Could not find FacebookDisplayName in default .plist file (%@). This value must be an exact match to the value of the 'Display Name' field under the Facebook app Settings. Is it set up properly? Using bundle at path: %@", facebookAppName, [bundle bundlePath]);
+            return;
         }
 
+        if (![facebookAppId isEqualToString:appId]) {
+            NSLog(@"FirebaseSimpleLogin: Found incorrect FacebookAppID in .plist file: %@. Was expecting %@", facebookAppId, appId);
+            return;
+        }
+
+        [FBSettings setDefaultAppID:appId];
+        if ([FirebaseSimpleLogin containsPublishActions:permissions]) {
+            FBSessionDefaultAudience fbAudience = [FirebaseSimpleLogin translateFacebookAudience:audience];
+            [FBSession openActiveSessionWithPublishPermissions:permissions defaultAudience:fbAudience allowLoginUI:YES completionHandler:^(FBSession *session, FBSessionState status, NSError *error) {
+                [self facebookSessionStateChanged:session state:status error:error userCallback:userCallback];
+            }];
+        } else {
+            [FBSession openActiveSessionWithReadPermissions:permissions allowLoginUI:YES completionHandler:^(FBSession *session, FBSessionState state, NSError *error) {
+                [self facebookSessionStateChanged:session state:state error:error userCallback:userCallback];
+            }];
+        }
     } else {
         [self requestFacebookAccountWithPermissions:permissions audience:audience appId:appId withBlock:^(NSError *error, ACAccount *account) {
             if (error) {
                 userCallback(error, nil);
             } else {
-
                 ACAccountCredential* credential = [account credential];
                 NSString* token = [credential oauthToken];
-
                 NSDictionary* providerData = @{@"permissions": permissions, @"audience": audience, @"appId": appId};
                 [self createFacebookUserWithToken:token providerData:providerData account:account andUserCallback:userCallback];
             }
