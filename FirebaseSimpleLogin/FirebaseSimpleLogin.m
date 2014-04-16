@@ -872,10 +872,6 @@ static NSString *const FIREBASE_AUTH_PATH_TWITTERTOKEN = @"/auth/twitter/token";
     [params addObject:@"mobile=ios"];
     [params addObject:@"transport=json"];
 
-    if ([self.options objectForKey:@"debug"]) {
-      [params addObject:@"debug=1"];
-    }
-
     [data enumerateKeysAndObjectsUsingBlock:^(NSString* key, NSString* obj, BOOL *stop) {
         NSString* pair = [NSString stringWithFormat:@"%@=%@", [key urlEncoded], [obj urlEncoded]];
         [params addObject:pair];
