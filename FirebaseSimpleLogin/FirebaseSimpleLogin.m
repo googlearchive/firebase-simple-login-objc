@@ -316,14 +316,14 @@ static NSString *const FIREBASE_AUTH_PATH_TWITTERTOKEN = @"/auth/twitter/token";
             return;
         }
 
-        [FBSettings setDefaultAppID:appId];
+        [NSClassFromString(@"FBSettings") setDefaultAppID:appId];
         if ([FirebaseSimpleLogin containsPublishActions:permissions]) {
             FBSessionDefaultAudience fbAudience = [FirebaseSimpleLogin translateFacebookAudience:audience];
-            [FBSession openActiveSessionWithPublishPermissions:permissions defaultAudience:fbAudience allowLoginUI:YES completionHandler:^(FBSession *session, FBSessionState status, NSError *error) {
+            [NSClassFromString(@"FBSession") openActiveSessionWithPublishPermissions:permissions defaultAudience:fbAudience allowLoginUI:YES completionHandler:^(FBSession *session, FBSessionState status, NSError *error) {
                 [self facebookSessionStateChanged:session state:status error:error userCallback:userCallback];
             }];
         } else {
-            [FBSession openActiveSessionWithReadPermissions:permissions allowLoginUI:YES completionHandler:^(FBSession *session, FBSessionState state, NSError *error) {
+            [NSClassFromString(@"FBSession") openActiveSessionWithReadPermissions:permissions allowLoginUI:YES completionHandler:^(FBSession *session, FBSessionState state, NSError *error) {
                 [self facebookSessionStateChanged:session state:state error:error userCallback:userCallback];
             }];
         }
@@ -641,7 +641,8 @@ static NSString *const FIREBASE_AUTH_PATH_TWITTERTOKEN = @"/auth/twitter/token";
                     NSString* userId = [userData objectForKey:@"id"];
                     NSString* uid = [userData objectForKey:@"uid"];
                     NSString* email = [userData objectForKey:@"email"];
-                    FAUser* user = [FAUser userWithId:userId uid:uid token:nil andEmail:email];
+                    BOOL isTemporaryPassword = [[userData objectForKey:@"isTemporaryPassword"] boolValue];
+                    FAUser* user = [FAUser userWithId:userId uid:uid token:nil isTemporaryPassword:isTemporaryPassword andEmail:email];
                     if (user) {
                         userCallback(nil, user);
                     } else {
@@ -838,7 +839,8 @@ static NSString *const FIREBASE_AUTH_PATH_TWITTERTOKEN = @"/auth/twitter/token";
     FAUser* user = nil;
     if (provider == FAProviderPassword) {
         NSString* email = [userData objectForKey:@"email"];
-        user = [FAUser userWithId:userId uid:uid token:token andEmail:email];
+        BOOL isTemporaryPassword = [[userData objectForKey:@"isTemporaryPassword"] boolValue];
+        user = [FAUser userWithId:userId uid:uid token:token isTemporaryPassword:isTemporaryPassword andEmail:email];
     } else if (provider == FAProviderFacebook || provider == FAProviderTwitter || provider == FAProviderAnonymous || provider == FAProviderGoogle) {
         NSMutableDictionary* thirdPartyData = [userData mutableCopy];
         [thirdPartyData removeObjectForKey:@"sessionKey"];
