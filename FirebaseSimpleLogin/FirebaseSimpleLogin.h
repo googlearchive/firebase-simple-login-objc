@@ -53,7 +53,7 @@
  * You must initialize the Simple Login with a Firebase reference. The Simple Login client will use that reference to authenticate to the Firebase servers
  *
  * @param ref A valid Firebase reference
- @ @param options A dictionary of options to respect (i.e. @{ @"debug": @YES } )
+ @ @param options A dictionary of options to respect (i.e. @{ @"flag": @YES } )
  * @return An initialized instance of FirebaseSimpleLogin
  */
 - (id) initWithRef:(Firebase *)aRef andOptions:(NSDictionary *)options;

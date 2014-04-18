@@ -14,16 +14,18 @@
 @synthesize uid;
 @synthesize provider;
 @synthesize email;
+@synthesize isTemporaryPassword;
 @synthesize thirdPartyUserAccount;
 @synthesize thirdPartyUserData;
 
-+ (FAUser *) userWithId:(NSString *)userId uid:(NSString *)uid token:(NSString *)token andEmail:(NSString *)email {
++ (FAUser *) userWithId:(NSString *)userId uid:(NSString *)uid token:(NSString *)token isTemporaryPassword:(BOOL)isTemporaryPassword andEmail:(NSString *)email {
     FAUser* user = [[FAUser alloc] init];
     user.provider = FAProviderPassword;
     user.userId = userId;
     user.uid = uid;
     user.authToken = token;
     user.email = email;
+    user.isTemporaryPassword = isTemporaryPassword;
     return user;
 }
 

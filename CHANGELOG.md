@@ -1,5 +1,12 @@
 ## Firebase Simple Login iOS Changelog:
 
+v1.3.2
+-------------
+Release Date: 2014-04-17
+
+* Add support for `isTemporaryPassword` flag when logging in using the email / password provider ([#17](https://github.com/firebase/firebase-simple-login/issues/17))
+* Gracefully handle missing Facebook iOS SDK during build  
+
 v1.3.1
 -------------
 Release Date: 2014-04-03

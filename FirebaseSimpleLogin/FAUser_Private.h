@@ -10,7 +10,7 @@
 
 @interface FAUser ()
 
-+ (FAUser *) userWithId:(NSString *)userId uid:(NSString *)uid token:(NSString *)token andEmail:(NSString *)email;
++ (FAUser *) userWithId:(NSString *)userId uid:(NSString *)uid token:(NSString *)token isTemporaryPassword:(BOOL)isTemporaryPassword andEmail:(NSString *)email;
 + (FAUser *) userWithId:(NSString *)userId uid:(NSString *)uid token:(NSString *)token provider:(FAProvider)provider userData:(NSDictionary *)data;
 
 @end
