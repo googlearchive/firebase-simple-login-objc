@@ -156,9 +156,18 @@
     WAIT_FOR(done);
 
     done = NO;
+    [authClient changePasswordForEmail:@"person@firebase.com" oldPassword:@"wrongPw" newPassword:@"newpw" completionBlock:^(NSError *error, BOOL success) {
+        STAssertTrue(!success, @"Changing password with incorrect password");
+        STAssertTrue(error != nil, @"Changing password with incorrect password should be an error");
+        done = YES;
+    }];
+  
+    WAIT_FOR(done);
+
+    done = NO;
     [authClient changePasswordForEmail:@"person@firebase.com" oldPassword:@"pw" newPassword:@"newpw" completionBlock:^(NSError *error, BOOL success) {
-        STAssertTrue(success, @"Changed password");
-        STAssertTrue(error == nil, @"Should not be an error");
+        STAssertTrue(success, @"Changing password with correct password");
+        STAssertTrue(error == nil, @"Changing password with incorrect password should be an error");
         done = YES;
     }];
 

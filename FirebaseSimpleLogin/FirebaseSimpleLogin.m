@@ -693,12 +693,17 @@ static NSString *const FIREBASE_AUTH_PATH_TWITTERTOKEN = @"/auth/twitter/token";
             @"newPassword": newPassword
         };
 
-
         [self makeRequestTo:FIREBASE_AUTH_PATH_PASSWORD_CHANGEPASSWORD withData:data andCallback:^(NSError *error, NSDictionary *json) {
             if (error) {
                 userCallback(error, NO);
             } else {
-                userCallback(nil, YES);
+                NSDictionary* errorDetails = [json objectForKey:@"error"];
+                if (errorDetails) {
+                    NSError* error = [FirebaseSimpleLogin errorFromResponse:errorDetails];
+                    userCallback(error, NO);
+                } else {
+                    userCallback(nil, YES);
+                }
             }
         }];
     }

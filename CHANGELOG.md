@@ -1,5 +1,11 @@
 ## Firebase Simple Login iOS Changelog:
 
+v1.3.3
+-------------
+Release Date: 2014-05-26
+
+* Fix a bug where `changePasswordForEmail` suppressed failed to surface an error when invoked with an incorrect password.
+
 v1.3.2
 -------------
 Release Date: 2014-04-17
