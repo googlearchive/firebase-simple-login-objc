@@ -3,3 +3,10 @@
 
 # Build
 target
+
+# xcode stuff
+*.xcworkspace
+xcuserdata
+
+# logs
+FAGitHash.h

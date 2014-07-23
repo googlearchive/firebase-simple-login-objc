@@ -55,6 +55,8 @@
 		37E7829C176FADE6008911E3 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37E78291176F9913008911E3 /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		37E7829E176FAE4C008911E3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37E7829D176FAE4C008911E3 /* CoreGraphics.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		37E7829F176FAE59008911E3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37E7829D176FAE4C008911E3 /* CoreGraphics.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		C85351F4263A4369D78FEF04 /* FAUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = C8535C90104D85685B01310C /* FAUtilities.m */; };
+		C8535580EE840F4E7C69E49E /* FAUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = C8535695CBBB9B78F8278983 /* FAUtilities.h */; };
 		D40B90BA17822CCB00DC4147 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D40B90B917822CCB00DC4147 /* Firebase.framework */; };
 		D40B90BB17822CCB00DC4147 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D40B90B917822CCB00DC4147 /* Firebase.framework */; };
 		D43C115218EB7471000F0DF3 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D43C115118EB7471000F0DF3 /* FacebookSDK.framework */; };
@@ -114,6 +116,8 @@
 		37E78291176F9913008911E3 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		37E78293176F9931008911E3 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		37E7829D176FAE4C008911E3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C8535695CBBB9B78F8278983 /* FAUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAUtilities.h; sourceTree = "<group>"; };
+		C8535C90104D85685B01310C /* FAUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAUtilities.m; sourceTree = "<group>"; };
 		D40B90B917822CCB00DC4147 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Firebase.framework; sourceTree = "<group>"; };
 		D43C115118EB7471000F0DF3 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		D43C115318EB7821000F0DF3 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
@@ -213,6 +217,8 @@
 				378633DE16EEA13800AAA749 /* FAUser.h */,
 				378633DF16EEA13800AAA749 /* FAUser.m */,
 				378633E216EEA21400AAA749 /* FATypes.h */,
+				C8535C90104D85685B01310C /* FAUtilities.m */,
+				C8535695CBBB9B78F8278983 /* FAUtilities.h */,
 			);
 			path = FirebaseSimpleLogin;
 			sourceTree = "<group>";
@@ -273,6 +279,7 @@
 				378633DA16EE59E800AAA749 /* NSString+FAURLUtils.h in Headers */,
 				378633DD16EE66F400AAA749 /* FATypedefs.h in Headers */,
 				37DAD5ED16F8C7C30052EA3C /* FAGitHash.h in Headers */,
+				C8535580EE840F4E7C69E49E /* FAUtilities.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +427,7 @@
 				378633D716EE547400AAA749 /* FAValidation.m in Sources */,
 				378633DB16EE59E800AAA749 /* NSString+FAURLUtils.m in Sources */,
 				378633E116EEA13900AAA749 /* FAUser.m in Sources */,
+				C85351F4263A4369D78FEF04 /* FAUtilities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
