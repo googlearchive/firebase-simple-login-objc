@@ -218,4 +218,6 @@
  */
 + (NSString *) sdkVersion;
 
++ (void) setLoggingEnabled:(BOOL)enabled;
+
 @end

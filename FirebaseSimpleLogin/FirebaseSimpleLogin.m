@@ -17,6 +17,7 @@
 #import "FATypes.h"
 #import "FAUser_Private.h"
 #import "FAGitHash.h"
+#import "FAUtilities.h"
 
 @interface FATupleCallbackData : NSObject
 
@@ -73,6 +74,10 @@ static NSString *const FIREBASE_AUTH_PATH_TWITTERTOKEN = @"/auth/twitter/token";
 
 + (NSString *) sdkVersion {
     return [NSString stringWithFormat:@"%@_%@_%@", FIREBASE_AUTH_PATH_SEMVER, kFirebaseSimpleLoginBuildDate, kFirebaseSimpleLoginGitHash];
+}
+
++ (void) setLoggingEnabled:(BOOL)enabled {
+    [FAUtilities setLoggingEnabled:enabled];
 }
 
 + (NSString *) namespaceWithUrl:(NSString *)url {
@@ -214,6 +219,7 @@ static NSString *const FIREBASE_AUTH_PATH_TWITTERTOKEN = @"/auth/twitter/token";
     NSError* theError = nil;
     if (status != noErr) {
         if (status != errSecItemNotFound) {
+            FALog(@"(checkAuthStatusWithBlock:) Error checking authentication status with keychain %d", status);
             theError = [FirebaseSimpleLogin errorFromResponse:@{}];
         }
     }
@@ -787,12 +793,12 @@ static NSString *const FIREBASE_AUTH_PATH_TWITTERTOKEN = @"/auth/twitter/token";
 
 
 - (void) clearCredentials {
+    FALog(@"Clearing credentials");
     NSDictionary* query = [self keyQueryDict];
     CFDictionaryRef queryRef = (__bridge CFDictionaryRef)query;
     OSStatus status = SecItemDelete(queryRef);
     if (status != noErr && status != errSecItemNotFound) {
-        // TODO: log errors?
-        //NSLog(@"failed to delete?");
+        FALog(@"(clearCredentials:) Error clearing credentials from from keychain %d", status);
     }
 }
 
@@ -864,9 +870,7 @@ static NSString *const FIREBASE_AUTH_PATH_TWITTERTOKEN = @"/auth/twitter/token";
     CFDictionaryRef attrRef = (__bridge CFDictionaryRef)attrs;
     OSStatus status = SecItemAdd(attrRef, NULL);
     if (status != noErr) {
-        // TODO: log an error?
-        user = nil;
-    } else if (status == errSecDuplicateItem) {
+        FALog(@"(saveSessionWithToken:) Error saving to keychain: %d", status);
         user = nil;
     }
 
