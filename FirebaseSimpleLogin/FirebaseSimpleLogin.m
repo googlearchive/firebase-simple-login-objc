@@ -140,6 +140,8 @@ static NSString *const FIREBASE_AUTH_PATH_TWITTERTOKEN = @"/auth/twitter/token";
         return FAProviderTwitter;
     } else if ([str isEqualToString:@"google"]) {
       return FAProviderGoogle;
+    } else if ([str isEqualToString:@"anonymous"]) {
+        return FAProviderAnonymous;
     }
     return FAProviderInvalid;
 }
@@ -790,8 +792,8 @@ static NSString *const FIREBASE_AUTH_PATH_TWITTERTOKEN = @"/auth/twitter/token";
         [self requestTwitterAccountWithBlock:^(NSError *error, ACAccount *account) {
             block(account);
         } multipleAccountsHandler:chooseAccount];
-    } else if (provider == FAProviderGoogle) {
-      block(nil);
+    } else if (provider == FAProviderGoogle || provider == FAProviderAnonymous) {
+        block(nil);
     }
 }
 
