@@ -12,6 +12,17 @@ To get started with the iOS SDK, see the [Firebase iOS Quickstart Guide](https:/
 
 To install in your application, [download from the Firebase CDN](https://www.firebase.com/docs/downloads.html).
 
+### Using Simple Login with Swift
+
+In order to use Simple Login in a Swift project, you'll also need to setup a bridging
+header in addition to adding required frameworks to your project. To do that,
+[follow these instructions](https://www.firebase.com/docs/ios/guide/setup.html#section-swift),
+and then add the following line to your bridging header:
+
+````objective-c
+#import <FirebaseSimpleLogin/FirebaseSimpleLogin.h>
+````
+
 ## Configuration
 
 The Firebase Simple Login iOS Client supports email & password, Facebook, Google,
@@ -27,14 +38,22 @@ providers, setup OAuth credentials, and configure valid OAuth request origins.
 Start monitoring user authentication state in your application by instantiating
 the Firebase Simple Login client with a Firebase reference, and callback.
 
+##### Objective-C
 ```objc
 Firebase* ref = [[Firebase alloc] initWithUrl:@"https://SampleChat.firebaseIO-demo.com"];
 FirebaseSimpleLogin* authClient = [[FirebaseSimpleLogin alloc] initWithRef:ref];
 ```
 
+##### Swift
+```swift
+let ref = Firebase(url:"https://SampleChat.firebaseIO-demo.com")
+var authClient = FirebaseSimpleLogin(ref:ref)
+```
+
 Once you have instantiated the client library, check the user's authentication
 status:
 
+##### Objective-C
 ```objc
 [authClient checkAuthStatusWithBlock:^(NSError* error, FAUser* user) {
     if (error != nil) {
@@ -47,20 +66,40 @@ status:
 }];
 ```
 
+##### Swift
+```swift
+authRef.checkAuthStatusWithBlock({ error, user in
+    if (error != nil) {
+        // Oh no! There was an error performing the check
+    } else if (user == nil) {
+        // No user is logged in
+    } else {
+        // There is a logged in user
+    }
+})
+```
+
 In addition, you can monitor the user's authentication state with respect to your Firebase by observing events at a special location: .info/authenticated
 
-```java
-Firebase authRef = ref.getRoot().child(".info/authenticated");
-authRef.addValueEventListener(new ValueEventListener() {
-  public void onDataChange(DataSnapshot snap) {
-    boolean isAuthenticated = snap.getValue(Boolean.class);
-  }
-  public void onCancelled() {}
-});
+##### Objective-C
+```objc
+Firebase* authRef = [ref.root childByAppendingPath:@".info/authenticated"];
+[authRef observeEventType:FEventTypeValue withBlock:^(FDataSnapshot* snapshot) {
+    BOOL isAuthenticated = [snapshot.value boolValue];
+}];
+```
+
+##### Swift
+```swift
+var authRef = ref.root.childByAppendingPath(".info/authenticated")
+authRef.observeEventType(.Value, withBlock: { snapshot in
+    var isAuthenticated = snapshot.value as? Bool
+})
 ```
 
 If the user is logged out, try authenticating using the provider of your choice:
 
+##### Objective-C
 ```objc
 [authClient loginWithEmail:@"email@example.com" andPassword:@"very secret"
     withCompletionBlock:^(NSError* error, FAUser* user) {
@@ -71,6 +110,17 @@ If the user is logged out, try authenticating using the provider of your choice:
         // We are now logged in
     }
 }];
+```
+
+##### Swift
+```swift
+authRef.loginWithEmail("email@example.com", andPassword: "very secret") { (error, user) in
+    if (error != nil) {
+        // There was an error logging in to this account
+    } else {
+        // We are now logged in
+    }
+}
 ```
 
 ## Testing / Compiling From Source
