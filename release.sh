@@ -25,7 +25,7 @@ if [[ $? -ne 0 ]]; then
 fi
 
 # Get version we're releasing based on old tag
-PREV_VER=$(git tag -l | awk -F '-v' '{print $2}' | gsort -V | tail -1)
+PREV_VER=$(git tag -l | awk -F 'v' '{print $2}' | gsort -V | tail -1)
 if [[ ! -z $PREV_VER ]]; then
   VERSION_CAND=$(echo $PREV_VER | ( IFS=".$IFS" ; read a b c && echo $a.$b.$((c + 1)) ))
 fi
