@@ -273,7 +273,7 @@ authClient.checkAuthStatusWithBlock({ error, user in
 
 ## Full Error Listing
 
-| Error | Code | Description |
+| Error Code | Description |
 | --- | --- |
 | FAErrorUserDoesNotExist | The specified account does not exist |
 | FAErrorInvalidPassword | Email/password auth: An incorrect password was given |
