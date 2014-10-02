@@ -279,7 +279,7 @@ authClient.checkAuthStatusWithBlock({ error, user in
 | FAErrorInvalidPassword | Email/password auth: An incorrect password was given |
 | FAErrorAccessNotGranted | The user did not authorize the application. This error can be triggered by the user closing the OAuth popup or canceling the authentication request. |
 | FAErrorAccountNotFound | The 3rd party account was not found |
-FAErrorAuthenticationProviderNotEnabled The specified auth provider is not enabled for your Firebase. |
+| FAErrorAuthenticationProviderNotEnabled | The specified auth provider is not enabled for your Firebase. |
 | FAErrorInvalidEmail | Email/password auth: The specified email is invalid. |
 | FAErrorBadSystemToken | The cached system token for the auth provider is no longer valid. The user has most likely disabled the specified auth provider. |
 | FAErrorUnknown | An unknown error occurred. |
