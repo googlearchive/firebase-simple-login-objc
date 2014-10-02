@@ -6,6 +6,18 @@ allowing you to authenticate users without any server code.
 
 Enable authentication via a number of third-party providers, anonymous login, or email / password authentication without having to manually store authentication credentials or run a server.
 
+## Deprecation Warning!
+
+Firebase Simple Login for iOS is now a part of the core Firebase iOS library. As a result,
+this standalone Simple Login client is being deprecated. We encourage everyone to upgrade to the
+latest version of the [Firebase iOS Client](https://www.firebase.com/docs/ios/) to get the
+latest and greatest features. If you are still using this deprecated Simple Login client,
+[you can find documentation for it here](./docs/v1).
+
+You can read more about this change [on our blog](TODO) and see the [updated login documentation](TODO)
+on our website. The updated documentation includes migration plans, but if you have any other
+questions, please reach out to us at support@firebase.com.
+
 ## Installation
 
 To get started with the iOS SDK, see the [Firebase iOS Quickstart Guide](https://www.firebase.com/docs/ios-quickstart.html).
