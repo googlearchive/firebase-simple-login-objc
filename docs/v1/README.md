@@ -283,3 +283,8 @@ FAErrorAuthenticationProviderNotEnabled The specified auth provider is not enabl
 | FAErrorInvalidEmail | Email/password auth: The specified email is invalid. |
 | FAErrorBadSystemToken | The cached system token for the auth provider is no longer valid. The user has most likely disabled the specified auth provider. |
 | FAErrorUnknown | An unknown error occurred. |
+
+
+## API Reference
+
+[You can find a full appledoc reference here.](https://firebase.github.io/firebase-simple-login-objc/appledoc/)
