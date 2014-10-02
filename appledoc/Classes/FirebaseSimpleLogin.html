@@ -1,0 +1,1496 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>FirebaseSimpleLogin Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">Firebase iOS SDK </a></h1>
+				<a id="developerHome" href="../index.html">Firebase</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">FirebaseSimpleLogin Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/sdkVersion">&nbsp;&nbsp;&nbsp;&nbsp;+ sdkVersion</option>
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/changePasswordForEmail:oldPassword:newPassword:completionBlock:">&nbsp;&nbsp;&nbsp;&nbsp;- changePasswordForEmail:oldPassword:newPassword:completionBlock:</option>
+	
+	<option value="//api/name/checkAuthStatusWithBlock:">&nbsp;&nbsp;&nbsp;&nbsp;- checkAuthStatusWithBlock:</option>
+	
+	<option value="//api/name/createUserWithEmail:password:andCompletionBlock:">&nbsp;&nbsp;&nbsp;&nbsp;- createUserWithEmail:password:andCompletionBlock:</option>
+	
+	<option value="//api/name/initWithRef:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithRef:</option>
+	
+	<option value="//api/name/initWithRef:andOptions:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithRef:andOptions:</option>
+	
+	<option value="//api/name/loginAnonymouslywithCompletionBlock:">&nbsp;&nbsp;&nbsp;&nbsp;- loginAnonymouslywithCompletionBlock:</option>
+	
+	<option value="//api/name/loginToFacebookAppWithId:permissions:audience:withCompletionBlock:">&nbsp;&nbsp;&nbsp;&nbsp;- loginToFacebookAppWithId:permissions:audience:withCompletionBlock:</option>
+	
+	<option value="//api/name/loginToGoogleWithAccessToken:withCompletionBlock:">&nbsp;&nbsp;&nbsp;&nbsp;- loginToGoogleWithAccessToken:withCompletionBlock:</option>
+	
+	<option value="//api/name/loginToTwitterAppWithId:multipleAccountsHandler:withCompletionBlock:">&nbsp;&nbsp;&nbsp;&nbsp;- loginToTwitterAppWithId:multipleAccountsHandler:withCompletionBlock:</option>
+	
+	<option value="//api/name/loginWithEmail:andPassword:withCompletionBlock:">&nbsp;&nbsp;&nbsp;&nbsp;- loginWithEmail:andPassword:withCompletionBlock:</option>
+	
+	<option value="//api/name/loginWithFacebookWithAccessToken:withCompletionBlock:">&nbsp;&nbsp;&nbsp;&nbsp;- loginWithFacebookWithAccessToken:withCompletionBlock:</option>
+	
+	<option value="//api/name/loginWithGoogleWithAccessToken:withCompletionBlock:">&nbsp;&nbsp;&nbsp;&nbsp;- loginWithGoogleWithAccessToken:withCompletionBlock:</option>
+	
+	<option value="//api/name/loginWithTwitterWithAccessToken:andAccessTokenSecret:andTwitterUserId:withCompletionBlock:">&nbsp;&nbsp;&nbsp;&nbsp;- loginWithTwitterWithAccessToken:andAccessTokenSecret:andTwitterUserId:withCompletionBlock:</option>
+	
+	<option value="//api/name/logout">&nbsp;&nbsp;&nbsp;&nbsp;- logout</option>
+	
+	<option value="//api/name/removeUserWithEmail:password:andCompletionBlock:">&nbsp;&nbsp;&nbsp;&nbsp;- removeUserWithEmail:password:andCompletionBlock:</option>
+	
+	<option value="//api/name/sendPasswordResetForEmail:andCompletionBlock:">&nbsp;&nbsp;&nbsp;&nbsp;- sendPasswordResetForEmail:andCompletionBlock:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Initializing a FirebaseSimpleLogin instance">Initializing a FirebaseSimpleLogin instance</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Checking current authentication status">Checking current authentication status</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Removing any existing authentication">Removing any existing authentication</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Email/password authentication methods">Email/password authentication methods</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Facebook authentication methods">Facebook authentication methods</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Google authentication methods">Google authentication methods</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Twitter authentication methods">Twitter authentication methods</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Anonymous authentication methods">Anonymous authentication methods</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Global configuration and settings">Global configuration and settings</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sdkVersion">sdkVersion</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/changePasswordForEmail:oldPassword:newPassword:completionBlock:">changePasswordForEmail:oldPassword:newPassword:completionBlock:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/checkAuthStatusWithBlock:">checkAuthStatusWithBlock:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/createUserWithEmail:password:andCompletionBlock:">createUserWithEmail:password:andCompletionBlock:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithRef:">initWithRef:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithRef:andOptions:">initWithRef:andOptions:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/loginAnonymouslywithCompletionBlock:">loginAnonymouslywithCompletionBlock:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/loginToFacebookAppWithId:permissions:audience:withCompletionBlock:">loginToFacebookAppWithId:permissions:audience:withCompletionBlock:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/loginToGoogleWithAccessToken:withCompletionBlock:">loginToGoogleWithAccessToken:withCompletionBlock:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/loginToTwitterAppWithId:multipleAccountsHandler:withCompletionBlock:">loginToTwitterAppWithId:multipleAccountsHandler:withCompletionBlock:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/loginWithEmail:andPassword:withCompletionBlock:">loginWithEmail:andPassword:withCompletionBlock:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/loginWithFacebookWithAccessToken:withCompletionBlock:">loginWithFacebookWithAccessToken:withCompletionBlock:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/loginWithGoogleWithAccessToken:withCompletionBlock:">loginWithGoogleWithAccessToken:withCompletionBlock:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/loginWithTwitterWithAccessToken:andAccessTokenSecret:andTwitterUserId:withCompletionBlock:">loginWithTwitterWithAccessToken:andAccessTokenSecret:andTwitterUserId:withCompletionBlock:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/logout">logout</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeUserWithEmail:password:andCompletionBlock:">removeUserWithEmail:password:andCompletionBlock:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sendPasswordResetForEmail:andCompletionBlock:">sendPasswordResetForEmail:andCompletionBlock:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="FirebaseSimpleLogin Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">FirebaseSimpleLogin Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">FirebaseSimpleLogin.h</td>
+</tr>
+						</tbody></table></div>
+					
+                    
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>A FirebaseSimpleLogin client instance for authenticating Firebase references with email / password, Facebook, or Twitter.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						<a title="Initializing a FirebaseSimpleLogin instance" name="task_Initializing a FirebaseSimpleLogin instance"></a>
+						<h3 class="subsubtitle task-title">Initializing a FirebaseSimpleLogin instance</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithRef:">&ndash;&nbsp;initWithRef:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithRef:andOptions:">&ndash;&nbsp;initWithRef:andOptions:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Checking current authentication status" name="task_Checking current authentication status"></a>
+						<h3 class="subsubtitle task-title">Checking current authentication status</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/checkAuthStatusWithBlock:">&ndash;&nbsp;checkAuthStatusWithBlock:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Removing any existing authentication" name="task_Removing any existing authentication"></a>
+						<h3 class="subsubtitle task-title">Removing any existing authentication</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/logout">&ndash;&nbsp;logout</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Email/password authentication methods" name="task_Email/password authentication methods"></a>
+						<h3 class="subsubtitle task-title">Email/password authentication methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/createUserWithEmail:password:andCompletionBlock:">&ndash;&nbsp;createUserWithEmail:password:andCompletionBlock:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/removeUserWithEmail:password:andCompletionBlock:">&ndash;&nbsp;removeUserWithEmail:password:andCompletionBlock:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/loginWithEmail:andPassword:withCompletionBlock:">&ndash;&nbsp;loginWithEmail:andPassword:withCompletionBlock:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/changePasswordForEmail:oldPassword:newPassword:completionBlock:">&ndash;&nbsp;changePasswordForEmail:oldPassword:newPassword:completionBlock:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sendPasswordResetForEmail:andCompletionBlock:">&ndash;&nbsp;sendPasswordResetForEmail:andCompletionBlock:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Facebook authentication methods" name="task_Facebook authentication methods"></a>
+						<h3 class="subsubtitle task-title">Facebook authentication methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/loginToFacebookAppWithId:permissions:audience:withCompletionBlock:">&ndash;&nbsp;loginToFacebookAppWithId:permissions:audience:withCompletionBlock:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/loginWithFacebookWithAccessToken:withCompletionBlock:">&ndash;&nbsp;loginWithFacebookWithAccessToken:withCompletionBlock:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Google authentication methods" name="task_Google authentication methods"></a>
+						<h3 class="subsubtitle task-title">Google authentication methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/loginToGoogleWithAccessToken:withCompletionBlock:">&ndash;&nbsp;loginToGoogleWithAccessToken:withCompletionBlock:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/loginWithGoogleWithAccessToken:withCompletionBlock:">&ndash;&nbsp;loginWithGoogleWithAccessToken:withCompletionBlock:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Twitter authentication methods" name="task_Twitter authentication methods"></a>
+						<h3 class="subsubtitle task-title">Twitter authentication methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/loginToTwitterAppWithId:multipleAccountsHandler:withCompletionBlock:">&ndash;&nbsp;loginToTwitterAppWithId:multipleAccountsHandler:withCompletionBlock:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/loginWithTwitterWithAccessToken:andAccessTokenSecret:andTwitterUserId:withCompletionBlock:">&ndash;&nbsp;loginWithTwitterWithAccessToken:andAccessTokenSecret:andTwitterUserId:withCompletionBlock:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Anonymous authentication methods" name="task_Anonymous authentication methods"></a>
+						<h3 class="subsubtitle task-title">Anonymous authentication methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/loginAnonymouslywithCompletionBlock:">&ndash;&nbsp;loginAnonymouslywithCompletionBlock:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Global configuration and settings" name="task_Global configuration and settings"></a>
+						<h3 class="subsubtitle task-title">Global configuration and settings</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sdkVersion">+&nbsp;sdkVersion</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/sdkVersion" title="sdkVersion"></a>
+	<h3 class="subsubtitle method-title">sdkVersion</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The FirebaseSimpleLogin SDK version</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSString *)sdkVersion</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The FirebaseSimpleLogin SDK version</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">FirebaseSimpleLogin.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/changePasswordForEmail:oldPassword:newPassword:completionBlock:" title="changePasswordForEmail:oldPassword:newPassword:completionBlock:"></a>
+	<h3 class="subsubtitle method-title">changePasswordForEmail:oldPassword:newPassword:completionBlock:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to change the password for the account with the given credentials to the new password given. Results are reported to the supplied block.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)changePasswordForEmail:(id)<em>email</em> oldPassword:(id)<em>oldPassword</em> newPassword:(id)<em>newPassword</em> completionBlock:(id)<em>block</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>email</em></dt>
+			<dd><p>The email for the account to be changed</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>oldPassword</em></dt>
+			<dd><p>The old password for the account to be changed</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>newPassword</em></dt>
+			<dd><p>The desired newPassword for the account</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>block</em></dt>
+			<dd><p>A block to receive the results of the operation</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Attempts to change the password for the account with the given credentials to the new password given. Results are reported to the supplied block.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">FirebaseSimpleLogin.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/checkAuthStatusWithBlock:" title="checkAuthStatusWithBlock:"></a>
+	<h3 class="subsubtitle method-title">checkAuthStatusWithBlock:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>checkAuthStatusWithBlock: will determine if there is a logged in user. The provided block will be called asynchronously with the results of the check</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)checkAuthStatusWithBlock:(id)<em>block</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>block</em></dt>
+			<dd><p>The block to be called with result of the authentication check.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>checkAuthStatusWithBlock: will determine if there is a logged in user. The provided block will be called asynchronously with the results of the check</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">FirebaseSimpleLogin.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/createUserWithEmail:password:andCompletionBlock:" title="createUserWithEmail:password:andCompletionBlock:"></a>
+	<h3 class="subsubtitle method-title">createUserWithEmail:password:andCompletionBlock:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Used to create a new user account with the given email and password combo. The results will be passed to the given block.
+Note that this method will not log the new user in.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)createUserWithEmail:(id)<em>email</em> password:(id)<em>password</em> andCompletionBlock:(id)<em>block</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>email</em></dt>
+			<dd><p>The email for the account to be created</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>password</em></dt>
+			<dd><p>The password for the account to be created</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>block</em></dt>
+			<dd><p>The block to be called with the results of the operation</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Used to create a new user account with the given email and password combo. The results will be passed to the given block.
+Note that this method will not log the new user in.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">FirebaseSimpleLogin.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithRef:" title="initWithRef:"></a>
+	<h3 class="subsubtitle method-title">initWithRef:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>You must initialize the Simple Login with a Firebase reference. The Simple Login client will use that reference to authenticate to the Firebase servers</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id)initWithRef:(id)<em>ref</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>ref</em></dt>
+			<dd><p>A valid Firebase reference</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An initialized instance of FirebaseSimpleLogin</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>You must initialize the Simple Login with a Firebase reference. The Simple Login client will use that reference to authenticate to the Firebase servers</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">FirebaseSimpleLogin.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithRef:andOptions:" title="initWithRef:andOptions:"></a>
+	<h3 class="subsubtitle method-title">initWithRef:andOptions:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<ul>
+<li>You must initialize the Simple Login with a Firebase reference. The Simple Login client will use that reference to authenticate to the Firebase servers
+*</li>
+<li>@param ref A valid Firebase reference
+@ @param options A dictionary of options to respect (i.e. @{ @&ldquo;flag&rdquo;: @YES } )</li>
+<li>@return An initialized instance of FirebaseSimpleLogin</li>
+</ul>
+
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id)initWithRef:(id)<em>aRef</em> andOptions:(id)<em>options</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<ul>
+<li>You must initialize the Simple Login with a Firebase reference. The Simple Login client will use that reference to authenticate to the Firebase servers
+*</li>
+<li>@param ref A valid Firebase reference
+@ @param options A dictionary of options to respect (i.e. @{ @&ldquo;flag&rdquo;: @YES } )</li>
+<li>@return An initialized instance of FirebaseSimpleLogin</li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">FirebaseSimpleLogin.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/loginAnonymouslywithCompletionBlock:" title="loginAnonymouslywithCompletionBlock:"></a>
+	<h3 class="subsubtitle method-title">loginAnonymouslywithCompletionBlock:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to log the user in anonymously. The block will receive the results of the attempt.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)loginAnonymouslywithCompletionBlock:(id)<em>block</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>block</em></dt>
+			<dd><p>A block to receive the results of the login attempt.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Attempts to log the user in anonymously. The block will receive the results of the attempt.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">FirebaseSimpleLogin.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/loginToFacebookAppWithId:permissions:audience:withCompletionBlock:" title="loginToFacebookAppWithId:permissions:audience:withCompletionBlock:"></a>
+	<h3 class="subsubtitle method-title">loginToFacebookAppWithId:permissions:audience:withCompletionBlock:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to log the user in to the Facebook app with the specified appId. The block will be called with the results of the attempt.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)loginToFacebookAppWithId:(id)<em>appId</em> permissions:(id)<em>permissions</em> audience:(id)<em>audience</em> withCompletionBlock:(id)<em>block</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>appId</em></dt>
+			<dd><p>The Facebook application id for the app to log into. Make sure that the app has your bundle id registered in the facebook developer console</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>permissions</em></dt>
+			<dd><p>An array of strings, specifying the desired permissions for this user. If the array is empty, &lsquo;email&rsquo; permission will be requested</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>audience</em></dt>
+			<dd><p>One of ACFacebookAudienceEveryone, ACFacebookAudienceFriends, ACFacebookAudienceOnlyMe, or nil. Required if your requested permissions include any write access. Assumed to be ACFacebookAudienceOnlyMe is nil is passed</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>block</em></dt>
+			<dd><p>A block that will be called with the results of the login attempt</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Attempts to log the user in to the Facebook app with the specified appId. The block will be called with the results of the attempt.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">FirebaseSimpleLogin.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/loginToGoogleWithAccessToken:withCompletionBlock:" title="loginToGoogleWithAccessToken:withCompletionBlock:"></a>
+	<h3 class="subsubtitle method-title">loginToGoogleWithAccessToken:withCompletionBlock:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to log the user in to the Google app with the specified access token. The block will be called with the results of the attempt.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)loginToGoogleWithAccessToken:(id)<em>accessToken</em> withCompletionBlock:(id)<em>block</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>accessToken</em></dt>
+			<dd><p>The Google access token to use when logging in</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>block</em></dt>
+			<dd><p>A block that will be called with the results of the login attempt</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Attempts to log the user in to the Google app with the specified access token. The block will be called with the results of the attempt.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">FirebaseSimpleLogin.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/loginToTwitterAppWithId:multipleAccountsHandler:withCompletionBlock:" title="loginToTwitterAppWithId:multipleAccountsHandler:withCompletionBlock:"></a>
+	<h3 class="subsubtitle method-title">loginToTwitterAppWithId:multipleAccountsHandler:withCompletionBlock:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to log the user in to the Twitter app with the specified appId.
+Requires a block to handle the case where multiple twitter accounts are registered with the OS. The block will be given an array of usernames and should return
+the index of the desired account. If, after seeing the list, no account is selected, return NSNotFound.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)loginToTwitterAppWithId:(id)<em>appId</em> multipleAccountsHandler:(id)<em>accountSelection</em> withCompletionBlock:(id)<em>block</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>appId</em></dt>
+			<dd><p>The Twitter app id to log the user into</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>accountSelection</em></dt>
+			<dd><p>A block to handle the case where the OS presents multiple Twitter accounts to choose from. Return the index of the desired username, or NSNotFound</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>block</em></dt>
+			<dd><p>A block that will be called with the results of the login attempt.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Attempts to log the user in to the Twitter app with the specified appId.
+Requires a block to handle the case where multiple twitter accounts are registered with the OS. The block will be given an array of usernames and should return
+the index of the desired account. If, after seeing the list, no account is selected, return NSNotFound.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">FirebaseSimpleLogin.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/loginWithEmail:andPassword:withCompletionBlock:" title="loginWithEmail:andPassword:withCompletionBlock:"></a>
+	<h3 class="subsubtitle method-title">loginWithEmail:andPassword:withCompletionBlock:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to authenticate to Firebase with the given credentials. The block will receive the results of the attempt.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)loginWithEmail:(id)<em>email</em> andPassword:(id)<em>password</em> withCompletionBlock:(id)<em>block</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>email</em></dt>
+			<dd><p>The email of the account</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>password</em></dt>
+			<dd><p>The password for the account</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>block</em></dt>
+			<dd><p>A block to receive the results of the login attempt</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Attempts to authenticate to Firebase with the given credentials. The block will receive the results of the attempt.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">FirebaseSimpleLogin.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/loginWithFacebookWithAccessToken:withCompletionBlock:" title="loginWithFacebookWithAccessToken:withCompletionBlock:"></a>
+	<h3 class="subsubtitle method-title">loginWithFacebookWithAccessToken:withCompletionBlock:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to log the user in to the Facebook app with the specified access token. The block will be called with the results of the attempt.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)loginWithFacebookWithAccessToken:(id)<em>accessToken</em> withCompletionBlock:(id)<em>block</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>accessToken</em></dt>
+			<dd><p>The Facebook access token to use when logging in</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>block</em></dt>
+			<dd><p>A block that will be called with the results of the login attempt</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Attempts to log the user in to the Facebook app with the specified access token. The block will be called with the results of the attempt.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">FirebaseSimpleLogin.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/loginWithGoogleWithAccessToken:withCompletionBlock:" title="loginWithGoogleWithAccessToken:withCompletionBlock:"></a>
+	<h3 class="subsubtitle method-title">loginWithGoogleWithAccessToken:withCompletionBlock:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to log the user in to the Google app with the specified access token. The block will be called with the results of the attempt.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)loginWithGoogleWithAccessToken:(id)<em>accessToken</em> withCompletionBlock:(id)<em>block</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>accessToken</em></dt>
+			<dd><p>The Google access token to use when logging in</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>block</em></dt>
+			<dd><p>A block that will be called with the results of the login attempt</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Attempts to log the user in to the Google app with the specified access token. The block will be called with the results of the attempt.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">FirebaseSimpleLogin.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/loginWithTwitterWithAccessToken:andAccessTokenSecret:andTwitterUserId:withCompletionBlock:" title="loginWithTwitterWithAccessToken:andAccessTokenSecret:andTwitterUserId:withCompletionBlock:"></a>
+	<h3 class="subsubtitle method-title">loginWithTwitterWithAccessToken:andAccessTokenSecret:andTwitterUserId:withCompletionBlock:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to log the user in to the Twitter app with the specified access token, access token secret, and Twitter user id. The
+block will be called with the results of the attempt.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)loginWithTwitterWithAccessToken:(id)<em>accessToken</em> andAccessTokenSecret:(id)<em>accessTokenSecret</em> andTwitterUserId:(id)<em>twitterUserId</em> withCompletionBlock:(id)<em>block</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>accessToken</em></dt>
+			<dd><p>The Twitter access token to use when logging in</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>accessTokenSecret</em></dt>
+			<dd><p>The Twitter access token secret to use when logging in</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>twitterUserId</em></dt>
+			<dd><p>The Twitter user id to use when logging in</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>block</em></dt>
+			<dd><p>A block that will be called with the results of the login attempt</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Attempts to log the user in to the Twitter app with the specified access token, access token secret, and Twitter user id. The
+block will be called with the results of the attempt.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">FirebaseSimpleLogin.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/logout" title="logout"></a>
+	<h3 class="subsubtitle method-title">logout</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Log the current user out, and clear any stored credentials</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)logout</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Log the current user out, and clear any stored credentials</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">FirebaseSimpleLogin.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/removeUserWithEmail:password:andCompletionBlock:" title="removeUserWithEmail:password:andCompletionBlock:"></a>
+	<h3 class="subsubtitle method-title">removeUserWithEmail:password:andCompletionBlock:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Remove a user account with the given email and password.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)removeUserWithEmail:(id)<em>email</em> password:(id)<em>password</em> andCompletionBlock:(id)<em>block</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>email</em></dt>
+			<dd><p>The email of the account to be removed</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>password</em></dt>
+			<dd><p>The password for the account to be removed</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>block</em></dt>
+			<dd><p>A block to receive the results of the operation</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Remove a user account with the given email and password.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">FirebaseSimpleLogin.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/sendPasswordResetForEmail:andCompletionBlock:" title="sendPasswordResetForEmail:andCompletionBlock:"></a>
+	<h3 class="subsubtitle method-title">sendPasswordResetForEmail:andCompletionBlock:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Send a password reset email to the owner of the account with the given email. Results are reported to the supplied block.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)sendPasswordResetForEmail:(id)<em>email</em> andCompletionBlock:(id)<em>block</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>email</em></dt>
+			<dd><p>The email of the account to be removed</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>block</em></dt>
+			<dd><p>A block to receive the results of the operation</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Send a password reset email to the owner of the account with the given email. Results are reported to the supplied block.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">FirebaseSimpleLogin.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+                    
+                    
+                    
+                    
+
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2014 Firebase. All rights reserved. (Last updated: 2014-10-01)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>
